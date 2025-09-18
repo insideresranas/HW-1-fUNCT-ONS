@@ -35,9 +35,6 @@ def sayi_okunusu(sayi):
     onlar_basamagi = ["", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"]
     birler_basamagi = ["", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"]
 
-    ondalik=sayi//10
-    birler=sayi%10
-
     return f"{onlar_basamagi[sayi//10]} {birler_basamagi[sayi%10]}"
 
 
@@ -84,8 +81,7 @@ def vize_notu_hesaplama(vize1, vize2, final):
     if 0 <= vize1 <= 100 and 0 <= vize2 <= 100 and 0 <= final <= 100:
         toplam_not = vize1*0.3 + vize2*0.3 + final*0.4
     else:
-        print("Geçersiz not!")
-        return
+        return "Geçersiz not!"
 
     if toplam_not >= 90:
         harf = "AA"
@@ -106,6 +102,8 @@ def vize_notu_hesaplama(vize1, vize2, final):
     else:
         harf = "FF"
 
-    print(f"Notunuz: {harf}")
+    return f"Notunuz: {harf}"
 
-vize_notu_hesaplama(100, 30, 80)
+
+print(vize_notu_hesaplama(100, 30, 80))
+
